@@ -1,0 +1,165 @@
+.promo {
+    padding-bottom: 50px;
+    &__main {
+        background: url('../img/promo/hand-dropping-paper-bag.png') right center / 27% no-repeat, #FFFBEC;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+        border-radius: clamp(10px, calcSize(10, 43), 43px);
+        padding: clamp(20px, calcSize(20, 75), 75px) clamp(10px, calcSize(10, 75), 75px);
+        @include media(767px) {
+            background: #FFFBEC;
+        }
+        a {
+            margin-top: clamp(30px, calcSize(30, 60), 60px);
+            display: block;
+            width: clamp(100px, calcSize(100, 331), 331px);
+            height: clamp(55px, calcSize(55, 86), 86px);
+            background: #E83525;
+            box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.25);
+            border-radius: 95px;
+            font-family: 'Montserrat';
+            font-weight: 700;
+            font-size: clamp(16px, calcSize(16, 20), 20px);
+            line-height: 123.7%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            @include media(767px) {
+                width: 200px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            transition: background-color .5s;
+            position: relative;
+            overflow: hidden;
+            &:hover {
+                background: #f9d040;
+            }
+            &:active {
+                background: #e7b605;
+                transition: none;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                animation-delay: .05s;
+                animation-duration: 4s;
+                animation-iteration-count: infinite;
+                animation-name: slideme;
+                animation-timing-function: ease-in-out;
+                background: linear-gradient(0deg,#fff,hsla(0,0%,100%,.01));
+                height: 300px;
+                left: -90px;
+                margin-left: 60px;
+                top: -150px;
+                transform: rotate(45deg);
+                transition: all .3s;
+                width: 25px;
+                z-index: 0;
+            }
+        }
+    }
+    &__title {
+        font-size: clamp(25px, calcSize(25, 64), 64px);
+        max-width: 71%;
+        @include media(767px) {
+            max-width: 100%;
+            text-align: center;
+        }
+    }
+    &__blocks {
+        margin-top: 28px;
+        display: flex;
+        gap: 25px;
+        justify-content: center;
+        @include media(1199px) {
+            flex-direction: column;
+            align-items: center;
+        }
+        &-link {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 30px;
+            align-items: start;
+            width: 44%;
+            border-radius: clamp(10px, calcSize(10, 43), 43px);
+            background: url('../img/promo/girl-in-white.png') right 15px bottom / 53% no-repeat, #FF5A52;
+            padding: clamp(20px, calcSize(20, 65), 65px) clamp(10px, calcSize(10, 65), 65px);
+            font-weight: 500;
+            font-size: clamp(22px, calcSize(22, 32), 32px);
+            line-height: 119.7%;
+            color: #FFFFFF;
+            &:hover {
+                color: #FFFFFF;
+            }
+            p {
+                max-width: 62%;
+                @include media(600px) {
+                    max-width: 100%;
+                    text-align: center;
+                }
+            }
+            @include media(1199px) {
+                width: auto;
+                max-width: 700px;
+                gap: 150px;
+                height: 389px;
+            }
+            @include media(600px) {
+                background: #FF5A52;
+                height: auto;
+                align-items: center;
+                gap: 30px;
+
+            }
+        }
+        &-slider {
+            border-radius: clamp(10px, calcSize(10, 43), 43px);
+            overflow: hidden;
+            position: relative;
+            width: 56%;
+            .item__name {
+                position: absolute;
+                left: 5.1%;
+                bottom: 10%;
+                font-size: clamp(15px, calcSize(15, 32), 32px);
+                line-height: 119.7%;
+            }
+            .item__price {
+                position: absolute;
+                right: 5.1%;
+                bottom: 10%;
+                font-weight: 600;
+                font-size: clamp(15px, calcSize(15, 40), 40px);
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .splide__arrow {
+                width: auto;
+                height: auto;
+            }
+            .splide__pagination__page {
+                background: #FFFFFF;
+                height: 15px;
+                width: 15px;
+                opacity: 1;
+                @include media(600px) {
+                    height: 10px;
+                    width: 10px;
+                }
+            }
+            .splide__pagination__page.is-active {
+                background: #F9D040;
+            }
+            @include media(1199px) {
+                max-width: 700px;
+                width: auto;
+            }
+        }
+    }
+}

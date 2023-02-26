@@ -1,0 +1,105 @@
+.header {
+    padding: clamp(20px, calcSize(20, 60), 60px) 0;
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__logo {
+        img {
+            width: clamp(80px, calcSize(80, 159), 159px);
+        }
+    }
+    .logo-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: clamp(0px, calcSize(0, 50), 50px);
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: clamp(0px, calcSize(0, 20), 20px);
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 123.7%;
+        > div {
+            padding: 15px clamp(0px, calcSize(0, 50), 50px);
+            background: #ebeaea;
+            border-radius: 36px;
+        }
+        .top-menu {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 10px;
+            &:hover {
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                .sub-menu {
+                    display: flex;
+                }
+            }
+        }
+        .sub-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 10px;
+            position: absolute;
+            top: 95%;
+            width: 100%;
+            display: none;
+            background: #ebeaea;
+            border-bottom-left-radius: 36px;
+            border-bottom-right-radius: 36px;
+            padding-bottom: 15px;
+        }
+    }
+    &__call {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        row-gap: 5px;
+        font-weight: 600;
+        &-phone {
+            font-size: clamp(16px, calcSize(16, 40), 40px);
+            line-height: 119.7%;
+        }
+        &-order {
+            font-size: clamp(16px, calcSize(16, 24), 24px);
+            line-height: 119.7%;
+            color: #E83525;
+        }
+    }
+}
+
+.index-header {
+    padding: clamp(10px, calcSize(10, 30), 30px) 0;
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    z-index: 100;
+}
+
+@media(max-width: 1499px) {
+    .header__call-phone {
+        font-size: clamp(16px, calcSize(16, 28), 28px);
+    }
+}
+
+@media(max-width: 1299px) {
+    .header nav div {
+        &:nth-child(5) {
+            display: none;
+        }
+    }
+}
+
+@media(max-width: 999px) {
+    .header nav {
+        display: none;
+    }
+}

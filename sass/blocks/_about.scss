@@ -1,0 +1,80 @@
+.about {
+    padding: 100px 0 80px 0;
+    &__title {
+        font-size: clamp(40px, calcSize(40, 120), 120px);
+        flex-shrink: 0;
+        @include media(991px) {
+            text-align: center;
+        }
+    }
+    &__main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        img {
+            max-width: clamp(300px, calcSize(300, 690), 690px);
+        }
+        @include media(991px) {
+            flex-direction: column;
+        }
+    }
+    .splide {
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        .splide__slide {
+            max-width: 678px;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            background: #f6f5f5;
+            box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.05);
+            border-radius: 19px;
+            overflow: hidden;
+            .slide__main {
+                padding: clamp(20px, calcSize(20, 50), 50px) 0 clamp(20px, calcSize(20, 50), 50px) clamp(15px, calcSize(15, 40), 40px);
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+                span {
+                    font-weight: 600;
+                    font-size: clamp(20px, calcSize(20, 32), 32px);
+                    line-height: 119.7%;
+                }
+                p {
+                    font-weight: 400;
+                    font-size: clamp(15px, calcSize(15, 20), 20px);
+                    line-height: 136.7%;
+                    color: #414141;
+                }
+            }
+            img {
+                max-width: 35%;
+                object-fit: cover;
+            }
+        }
+        .splide__arrows {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .splide__arrow {
+            position: initial;
+            transform: initial;
+            height: initial;
+            width: initial;
+        }
+        .my-carousel-progress {
+            margin-top: 20px;
+            background: #eeeeee;
+            border-radius: 26px;
+        }
+        .my-carousel-progress-bar {
+            background: #F9D040;
+            border-radius: 26px;
+            height: 17px;
+            transition: width 400ms ease;
+            width: 0;
+        }
+    }
+}

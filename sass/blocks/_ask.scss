@@ -1,0 +1,110 @@
+.ask {
+    padding-bottom: 75px;
+    &__title {
+        font-size: clamp(25px, calcSize(25, 40), 40px);
+        @include media(991px) {
+            text-align: center;
+        }
+    }
+    &__wrapper {
+        margin-top: 75px;
+        display: flex;
+        gap: 30px;
+        align-items: start;
+    }
+    &__questions {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        &-item {
+            max-width: 1100px;
+            background: #FFFBEC;
+            border-radius: 19px;
+            padding: clamp(20px, calcSize(20, 30), 30px) clamp(15px, calcSize(15, 40), 40px);
+            input {
+                display: none;
+            }
+            label {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-weight: 600;
+                font-size: clamp(17px, calcSize(17, 24), 24px);
+                line-height: 130%;
+                color: #1A1A1A;
+                cursor: pointer;
+                span {
+                    max-width: 87%;
+                }
+                img {
+                    transform: rotate(45deg);
+                    transition: 0.5s all;
+                    width: clamp(30px, calcSize(30, 55), 55px);
+                }
+            }
+            p {
+                display: none;
+                max-width: 87%;
+                margin-top: 18px;
+                font-weight: 400;
+                font-size: clamp(14px, calcSize(14, 16), 16px);
+                line-height: 130%;
+                color: #302F2F;
+            }
+            input:checked ~ p {
+                display: block;
+            }
+            input:checked ~ label {
+                img {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+    &__right {
+        width: clamp(300px, calcSize(300, 606), 606px);
+        border-radius: 19px;
+        padding: clamp(30px, calcSize(30, 60), 60px) clamp(15px, calcSize(15, 40), 40px);
+        background: url('../img/ask/man-with-a-question.png') right bottom / 45% no-repeat, #FBFBFB;
+        span {
+            font-family: 'Montserrat';
+            font-weight: 600;
+            font-size: clamp(25px, calcSize(25, 48), 48px);
+            line-height: 119.7%;
+        }
+        p {
+            max-width: 344px;
+            margin-top: 30px;
+            font-family: 'Montserrat';
+            font-weight: 500;
+            font-size: clamp(15px, calcSize(15, 20), 20px);
+            line-height: 142.7%;
+        }
+        .button {
+            margin-top: 50px;
+            max-width: 50%;
+        }
+    }
+}
+
+@media (max-width: 1399px) {
+    .ask__wrapper {
+        flex-direction: column;
+    }
+    .ask__right {
+        width: 450px;
+    }
+}
+
+@media (max-width: 991px) {
+    .ask__wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .ask__right {
+        width: 300px;
+    }
+}

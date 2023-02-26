@@ -1,0 +1,167 @@
+.discount {
+    &__title {
+        font-size: clamp(25px, calcSize(25, 40), 40px);
+        line-height: 1.3;
+        @include media(991px) {
+            text-align: center;
+        }
+    }
+    &__tabs {
+        margin-top: 40px;
+        display: flex;
+        gap: 10px;
+        &-item {
+            width: clamp(200px, calcSize(200, 290), 290px);
+            height: clamp(50px, calcSize(50, 74), 74px);
+            background: #ececec;
+            border-radius: 35px;
+            font-family: 'Montserrat';
+            font-weight: 500;
+            font-size: clamp(18px, calcSize(18, 24), 24px);
+            line-height: 100.7%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.5s all;
+            &:hover {
+                transform: scale(1.05);
+            }
+            &_active {
+                background: #FF5A52;
+                color: #FFFFFF;
+            }
+        }
+    }
+    &__items {
+        display: none;
+        margin-top: 40px;
+        grid-template-columns: auto auto auto minmax(300px, 600px);
+        justify-content: start;
+        gap: 25px;
+        &_active {
+            display: grid;
+        }
+        &-new {
+            background: #F6F6F6;
+            border-radius: 19px;
+            max-width: clamp(300px, calcSize(300, 600), 600px);
+            height: clamp(400px, calcSize(400, 610), 610px);
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            position: relative;
+            span {
+                font-family: 'Montserrat';
+                font-weight: 600;
+                font-size: clamp(20px, calcSize(20, 48), 48px);
+                line-height: 119.7%;
+                span {
+                    color: #E83525;
+                }
+            }
+            p {
+                font-family: 'Montserrat';
+                font-weight: 600;
+                font-size: clamp(15px, calcSize(15, 20), 20px);
+                line-height: 130.7%;
+            }
+            &:before {
+                content: url('../../img/promo/link-arrow.svg');
+                display: block;
+                position: absolute;
+                bottom: clamp(15px, calcSize(15, 30), 30px);
+            }
+            &-1 {
+                padding: 0 15px clamp(70px, calcSize(70, 100), 100px) clamp(30px, calcSize(30, 44), 44px);
+                justify-content: end;
+                p {
+                    max-width: 423px;
+                }
+                background: url('../img/discount/ear-catalog.png') right top / 50% no-repeat, #F6F6F6;
+                &::before {
+                    right: clamp(15px, calcSize(15, 30), 30px);
+                }
+            }
+            &-2 {
+                padding: clamp(30px, calcSize(30, 54), 54px) 0 clamp(30px, calcSize(30, 54), 54px) clamp(30px, calcSize(30, 44), 44px);
+                background: url('../img/discount/catalog-bra.jpg') right center / contain no-repeat, #EFEFEF;
+                justify-content: end;
+                &::before {
+                    right: clamp(15px, calcSize(15, 30), 30px); 
+                }
+            }
+        }
+        &-1 {
+            .ware {
+                &__price {
+                    position: relative;
+                    &::before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        top: -20px;
+                        left: 0;
+                        font-weight: 500;
+                        font-size: clamp(15px, calcSize(15, 20), 20px);
+                        line-height: 119.7%;
+                        color: #B8B8B8;
+                        text-decoration: line-through;
+                    }
+                }
+                &:nth-child(1) {
+                    .ware__price {
+                        &::before {
+                            content: '1490 ₽'
+                        }
+                    }
+                }
+                &:nth-child(2) {
+                    .ware__price {
+                        &::before {
+                            content: '1490 ₽'
+                        }
+                    }
+                }
+                &:nth-child(3) {
+                    .ware__price {
+                        &::before {
+                            content: '1990 ₽'
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1599px) {
+    .discount__items {
+        grid-template-columns: auto auto auto;
+    }
+    .discount__items-new {
+        grid-column: 1/3;
+        max-width: initial;
+        width: clamp(300px, calcSize(300, 600), 600px);
+    }
+}
+
+@media (max-width: 1199px) {
+    .discount__items {
+        grid-template-columns: auto auto;
+    }
+    .discount__items-new {
+        grid-column: initial;
+    }
+}
+
+@media (max-width: 819px) {
+    .discount__items {
+        grid-template-columns: auto;
+        justify-content: center;
+        justify-items: center;
+    }
+    .discount__tabs {
+        justify-content: center;
+    }
+}

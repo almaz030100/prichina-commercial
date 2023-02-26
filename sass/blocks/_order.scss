@@ -1,0 +1,154 @@
+.order {
+    padding: 44px 0;
+    &__title {
+        font-size: clamp(25px, calcSize(25, 40), 40px);
+        @include media(991px) {
+            text-align: center;
+        }
+    }
+    &__wrapper {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: 394px auto;
+        gap: 24px;
+        align-items: start;
+    }
+    &__main {
+        background: url('../img/order/call.png') right bottom / 76% no-repeat, #FBFBFB;
+        border: 1px solid #EFEFEF;
+        border-radius: 19px;
+        padding: 57px 28px clamp(200px, calcSize(200, 238), 238px) 28px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        &-number {
+            position: absolute;
+            top: 22px;
+            right: 15px;
+            font-size: 16px;
+            line-height: 119.7%;
+        }
+        &-title {
+            font-weight: 500;
+            font-size: clamp(20px, calcSize(20, 28), 28px);
+            line-height: 119.7%;
+            max-width: 287px;
+        }
+        &-phone {
+            font-weight: 600;
+            font-size: clamp(25px, calcSize(25, 40), 40px);
+            line-height: 119.7%;
+            margin-top: 38px;
+        }
+        &-call {
+            margin-top: 24px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 119.7%;
+            color: #485D9E;
+            &:hover {
+                color: #485D9E;
+                text-decoration: underline;
+            }
+        }
+    }
+    &__right {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 24px;
+    }
+    &__item {
+        background: #FBFBFB;
+        border: 1px solid #EFEFEF;
+        border-radius: 29px;
+        padding: 57px 5px 19px 31px;
+        font-size: 18px;
+        line-height: 119.7%;
+        position: relative;
+        &-number {
+            position: absolute;
+            top: 22px;
+            right: 19px;
+        }
+    }
+    &__descrs {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 33% auto;
+    }
+    &__descr {
+        border: 1px solid #EFEFEF;
+        border-radius: 29px;
+        padding: 56px 26px 0 35px;
+        &-title {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 119.7%;
+        }
+        p {
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 136.7%;
+        }
+        &-info {
+            display: block;
+            margin-top: 28px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 119.7%;
+            color: #485D9E;
+            &:hover {
+                color: #485D9E;
+                text-decoration: underline;
+            }
+        }
+        &-1 {
+            padding-bottom: 130px;
+            background: url('../img/order/cards.png') center bottom no-repeat, #FBFBFB;
+        }
+        &-2 {
+            padding-bottom: 45px;
+            background: url('../img/order/consultation.png') right bottom / 30% no-repeat, #FBFBFB;
+            p {
+                max-width: 62%;
+            }
+        }
+    }
+}
+
+@media (max-width: 1399px) {
+    .order__items {
+        grid-template-columns: repeat(3, minmax(0, 247px));
+    }
+    .order__descrs {
+        grid-template-columns: auto;
+    }
+}
+
+@media (max-width: 991px) {
+    .order__wrapper {
+        grid-template-columns: auto;
+        justify-content: center;
+        justify-items: center;
+    }
+    .order__items {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 575px) {
+    .order__items {
+        grid-template-columns: 250px;
+    }
+    .order__descr-2 {
+        background: #fbfbfb;
+        p {
+            max-width: initial;
+        }
+    }
+}

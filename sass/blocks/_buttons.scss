@@ -1,0 +1,44 @@
+@keyframes slideme{0%{left:-30px;margin-left:0}30%,to{left:110%;margin-left:80px}}
+
+.button {
+    background: #E83525;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.25);
+    border-radius: 95px;
+    border-style: none;
+    height: 65px;
+    width: 262px;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 123.7%;
+    color: #FFFFFF;
+    
+    transition: background-color .5s;
+    position: relative;
+    overflow: hidden;
+    &:hover {
+        background: #f9d040;
+    }
+    &:active {
+        background: #e7b605;
+        transition: none;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        animation-delay: .05s;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-name: slideme;
+        animation-timing-function: ease-in-out;
+        background: linear-gradient(0deg,#fff,hsla(0,0%,100%,.01));
+        height: 300px;
+        left: -90px;
+        margin-left: 60px;
+        top: -150px;
+        transform: rotate(45deg);
+        transition: all .3s;
+        width: 25px;
+        z-index: 0;
+    }
+}

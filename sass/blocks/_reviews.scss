@@ -1,0 +1,96 @@
+.reviews {
+    padding-top: 44px;
+    &__main {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+    }
+    &__title {
+        max-width: 400px;
+        font-size: clamp(25px, calcSize(25, 40), 40px);
+        flex-shrink: 0;
+        @include media(991px) {
+            text-align: center;
+        }
+    }
+    &__subtitle {
+        margin-top: 15px;
+        max-width: 830px;
+        font-size: 18px;
+        line-height: 136.7%;
+    }
+    &__wrapper {
+        margin-top: 100px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+    }
+    &__item {
+        max-width: 411px;
+        padding: 104px clamp(15px, calcSize(15, 50), 50px) 60px clamp(15px, calcSize(15, 24), 24px);
+        background: #f2f2f2;
+        box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.05);
+        border-radius: 19px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        &>span {
+            margin-top: 20px;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 119.7%;
+        }
+        p {
+            margin-top: 20px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 136.7%;
+            color: #414141;
+        }
+        &-rating {
+            position: absolute;
+            background: #e7e7e7;
+            border-radius: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            font-size: 16px;
+            line-height: 119.7%;
+            width: 84px;
+            height: 29px;
+            top: 19px;
+            right: 19px;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .reviews__main {
+        flex-direction: column;
+        align-items: center;
+    }
+    .reviews__title {
+        max-width: initial;
+    }
+    .reviews__wrapper {
+        margin-top: 60px;
+    }
+}
+
+@media (max-width: 1399px) {
+    .reviews__wrapper {
+        grid-template-columns: repeat(2, minmax(0, 411px));
+        justify-content: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .reviews__wrapper {
+        grid-template-columns: auto;
+    }
+    .reviews__item {
+        padding-top: 70px;
+    }
+}

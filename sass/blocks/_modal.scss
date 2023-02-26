@@ -1,0 +1,257 @@
+.fancybox__content {
+    color: inherit;
+    padding: 0;
+}
+
+.modal {
+    display: none;
+    color: #000;
+    background: #FFFFFF;
+    border-radius: clamp(20px, calcSize(20, 50), 50px);
+    max-width: 1540px;
+    width: 82vw;
+    padding-top: clamp(30px, calcSize(30, 120), 120px);
+    padding-bottom: clamp(30px, calcSize(30, 170), 170px);
+    padding-right: clamp(15px, calcSize(15, 160), 160px);
+    .modal__wrapper {
+        display: flex;
+        justify-content: end;
+    }
+    .form {
+        max-width: 743px;
+        width: 72%;
+        &__title {
+            font-family: 'Montserrat';
+            font-weight: 600;
+            font-size: clamp(30px, calcSize(30, 64), 64px);
+            line-height: 113.2%;
+        }
+        &__inputs {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 19px;
+            row-gap: 27px;
+        }
+        input {
+            max-width: 382px;
+            height: clamp(60px, calcSize(60, 86), 86px);
+            border-radius: 39px;
+            border-style: none;
+            padding-left: 79px;
+            padding-right: 15px;
+            font-size: clamp(16px, calcSize(16, 20), 20px);
+            line-height: 123.7%;
+            background: left 27px top 50% no-repeat, #e7e7e7;
+            &::placeholder {
+                color: #7D7D7D;
+            }
+        }
+        input[name="name"] {
+            background-image: url('../img/modal/name.svg');
+        }
+        input[name="phone"] {
+            background-image: url('../img/modal/phone.svg');
+        }
+        input[name="email"] {
+            background-image: url('../img/modal/email.svg');
+        }
+        &__bottom {
+            margin-top: 45px;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+        .button {
+            flex-shrink: 0;
+            height: clamp(60px, calcSize(60, 86), 86px);
+            font-weight: 600;
+            font-size: clamp(18px, calcSize(18, 24), 24px);
+        }
+        &__policy {
+            display: flex;
+            align-items: start;
+            gap: 10px;
+            font-size: 14px;
+            line-height: 151.7%;
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+#modal1 {
+    background: url('../img/ask/man-with-a-question.png') right 21% bottom no-repeat, #ffffff;
+    padding-left: clamp(15px, calcSize(15,101) ,101px);
+    padding-right: clamp(15px, calcSize(15,101) ,101px);
+    .modal__wrapper {
+        display: block;
+    }
+    .form__inputs {
+        width: 100%;
+        grid-template-columns: auto 1fr;
+    }
+    .form__inputs-left {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 19px;
+        row-gap: 27px;
+    }
+    .form__inputs-right {
+        textarea {
+            padding-left: 44px;
+            padding-top: 30px;
+            width: 100%;
+            height: 100%;
+            resize: none;
+            border-radius: 39px;
+            border-style: none;
+            padding-right: 15px;
+            font-size: clamp(16px, 0.002688172 * 100vw + 15.1397849462px ,20px);
+            line-height: 123.7%;
+            background: #e7e7e7;
+        }
+    }
+    .form {
+        max-width: initial;
+        width: initial;
+    }
+    .form .button {
+        width: 318px;
+        max-width: 100%;
+    }
+    .form__policy {
+        max-width: 390px;
+    }
+}
+
+#modal2 {
+    padding-top: clamp(30px, calcSize(30, 78), 78px);
+    padding-bottom: clamp(30px, calcSize(30, 113), 113px);
+    padding-right: 15px;
+    padding-left: 15px;
+    .modal__wrapper {
+        justify-content: center;
+    }   
+    .form {
+        max-width: 506px;
+        &__title {
+            text-align: center;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        &__inputs {
+            display: flex;
+            flex-direction: column;
+        }
+        input {
+            max-width: 100%;
+        }
+        &__bottom {
+            flex-direction: column;
+            gap: 25px;
+        }
+        .button {
+            width: 100%;
+        }
+    }
+}
+
+#modal-policy {
+    .modal__wrapper {
+        display: block;
+    }
+    width: 65vw;
+}
+
+label.error {
+    display: none !important;
+}
+
+input.error {
+    outline: 1px solid #ff3e3e;
+}
+
+@media (max-width: 1399px) {
+    .modal {
+        background: #fff !important;
+        padding-right: 15px;
+        padding-left: 15px;
+        .modal__wrapper {
+            justify-content: center;
+        }
+    }
+    .modal .form__title {
+        text-align: center;
+    }
+    #modal1 .form__inputs {
+        grid-template-columns: auto;
+    }
+    #modal1 .form__inputs-left {
+        grid-template-columns: 100%;
+        justify-content: center;
+        justify-items: center;
+    }
+    #modal1 .form__inputs-right textarea {
+        max-width: 500px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 150px;
+    }
+    #modal1 .form__bottom {
+        flex-direction: column;
+    }
+    #modal1 .form input {
+        width: 500px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 1199px) {
+    .modal .form {
+        max-width: 506px;
+    }
+    .modal .form__inputs {
+        display: flex;
+        flex-direction: column;
+    }
+    .modal .form input {
+        max-width: 100%;
+    }
+    .modal .form__bottom {
+        flex-direction: column;
+        gap: 25px;
+    }
+    .modal .form .button {
+        width: 100%;
+    }
+    #modal-policy {
+        width: 82vw;
+    }
+} 
+
+@media (max-width: 767px) {
+    #modal1 .form input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 575px) {
+    .modal {
+        min-width: 300px;
+        max-width: initial !important;
+        width: 90vw !important;
+    }
+    .modal .form {
+        width: 100% !important;
+    }
+    .modal .form__inputs {
+        margin-top: 30px;
+    }
+    .modal .form__bottom {
+        margin-top: 30px;
+    }
+}

@@ -1,0 +1,109 @@
+.ware {
+    width: clamp(300px, calcSize(300, 351), 351px);
+    background: #FFFFFF;
+    border: 1px solid #EFEFEF;
+    border-radius: 19px;
+    overflow: hidden;
+    &__main {
+        height: clamp(300px, calcSize(300, 380), 380px);
+        position: relative;
+        .splide__slide {
+            height: clamp(300px, calcSize(300, 380), 380px);
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    &__top {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        left: 20px;
+        display: flex;
+        justify-content: space-between;
+        &-rating {
+            background: #FFFFFF;
+            border-radius: 28px;
+            width: 72px;
+            height: 29px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            font-size: 16px;
+            line-height: 119.7%;
+            transition: 0.5s all;
+            &:hover {
+                background: rgb(255, 117, 110);
+            }
+        }
+        &-stock {
+            width: 88px;
+            height: 29px;
+            background: #FFFFFF;
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            line-height: 119.7%;
+            color: #585858;
+        }
+    }
+    .splide__pagination__page {
+        width: 63px;
+        height: 7px;
+        background: #FFFFFF;
+        border-radius: 12px;
+        transform: none;
+        opacity: 1;
+    }
+    .splide__pagination__page.is-active {
+        background: #F9D040;
+    }
+    &__text {
+        padding: 28px;
+    }
+    &__name {
+        font-size: 18px;
+        line-height: 119.7%;
+        color: #585858;
+    }
+    &__bottom {
+        margin-top: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__price {
+        font-weight: 700;
+        font-size: clamp(20px, calcSize(20, 32), 32px);
+        line-height: 119.7%;
+    }
+    &__buy {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 119.7%;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: 0.4s all;
+        &:hover {
+            span {
+                &:nth-child(1) {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    &:hover {
+        .ware__buy {
+            background: #ff5a52;
+            padding: 7px 10px;
+            color: #fff;
+            border-radius: 12px;
+        }
+    }
+}

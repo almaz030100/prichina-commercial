@@ -1,0 +1,32 @@
+@function calcSize($f-min, $f-max, $units: px) {
+
+  $k: ($f-max - $f-min)/(1808 - 320);
+  $b: $f-min - $k * 320;
+
+  $b: $b + $units;
+
+  @return calc( #{$k} * 100vw + #{$b} );
+
+}
+
+@function int($f-min, $f-max, $units: px) {
+
+  $k: ($f-max - $f-min)/(1808 - 320);
+  $b: $f-min - $k * 320;
+
+  $b: $b + $units;
+
+  $cl-min: $f-min + $units;
+  $cl-max: $f-max + $units;
+
+  @return clamp($cl-min, calc(#{$k} * 100vw + #{$b}), $cl-max);
+
+}
+
+@mixin media($maxWidth) {
+
+  @media (max-width: $maxWidth){
+      @content;
+  }
+
+}

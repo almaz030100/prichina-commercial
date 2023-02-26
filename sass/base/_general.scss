@@ -1,0 +1,45 @@
+.container {
+    width: 100%;
+    max-width: 1808px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+@media (max-width: 767px) {
+    .container {
+        padding: 0 10px;
+    }
+}
+
+.wow {
+    visibility: hidden;
+}
+
+body {
+    font-family: 'Mulish';
+}
+
+.title_big {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 112.7%;
+    color: #0F0F0F;
+    .span1 {
+        color: #F9D040;
+    }
+    .span2 {
+        color: #E83525;
+    }
+}
+
+.title_small {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 120%;
+    color: #0F0F0F;
+}
+
+.pagewrapper {
+    overflow: hidden;
+}

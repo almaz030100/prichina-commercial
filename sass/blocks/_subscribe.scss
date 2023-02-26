@@ -1,0 +1,102 @@
+.subscribe {
+    &__wrapper {
+        background: #F9D040;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+        border-radius: clamp(20px, calcSize(20, 43), 43px);
+        overflow: hidden;
+        display: flex;
+        & > img {
+            margin-left: 30px;
+            margin-top: 50px;
+            max-width: 46%;
+            object-fit: contain;
+            object-position: bottom;
+        }
+    }
+    .form {
+        padding: clamp(20px, calcSize(20, 90), 90px) clamp(15px, calcSize(15, 90), 90px);
+        width: 52%;
+    }
+    &__title {
+        font-size: clamp(25px, calcSize(25, 48), 48px);
+        @include media(991px) {
+            text-align: center;
+        }
+    }
+    &__subtitle {
+        margin-top: 30px;
+        font-size: clamp(15px, calcSize(15, 16), 16px);
+        line-height: 163.2%;
+        color: #414141;
+    }
+    input {
+        margin-top: 60px;
+        background: #FFFFFF;
+        border-radius: 39px;
+        border-style: none;
+        width: 100%;
+        height: 70px;
+        padding: 0 37px;
+        font-size: clamp(16px, calcSize(16, 20), 20px);
+        line-height: 123.7%;
+    }
+    &__bottom {
+        margin-top: 25px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+    .button {
+        width: 38%;
+        flex-shrink: 0;
+    }
+    .policy {
+        display: flex;
+        align-items: start;
+        gap: 10px;
+        span {
+            font-size: 12px;
+            line-height: 123.7%;
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+    label.error {
+        display: none !important;
+    }
+    input.error {
+        outline: 2px solid #ff3e3e;
+    }
+}
+
+@media (max-width: 1199px) {
+    .subscribe__wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .subscribe__wrapper>img {
+        margin-left: 0;
+        order: 1;
+        max-width: 580px;
+        margin-top: 0;
+    }
+    .subscribe__bottom {
+        flex-direction: column;
+    }
+    .subscribe .form {
+        width: initial;
+        max-width: 590px;
+    }
+    .subscribe .button {
+        width: 200px;
+    }
+}
+
+@media (max-width: 767px) {
+    .subscribe__wrapper>img {
+        max-width: 90%;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
